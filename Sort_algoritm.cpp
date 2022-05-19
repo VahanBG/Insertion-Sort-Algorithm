@@ -1,35 +1,42 @@
 #include <iostream>
+#include<vector>
 #include <algorithm>
 
-void sort(int*arr,int size_arr)
+void sort(std::vector<int>::iterator arr,int size_arr) //սա դասավորում է զանգվածի ելեմենտները աճման կարգով
 {
-    for(int i = 0 ; i < size_arr - 1 ; i++){
-        for(int j = i + 1 ; j < size_arr ; j++){
-            if(arr[i]>arr[j]){
-               std::swap(arr[i],arr[j]);
-            }  
-        }
-
+    for(int i = 0 ; i < size_arr  ; i++){
+    int count = arr[i];
+        for(int j = i - 1 ; j >= 0  &&  arr[j] > count ; j--){
+            arr[j+1] = arr[j];
+            arr[j] = count ;
+        }  
         
     }
-
 }
-void print_arr(int *arr,int size_arr){
+void print_arr(std::vector<int>::iterator  arr,int size_arr){ //տպում է զանգվածը
   for(int i = 0 ; i < size_arr; i++ ){
         std::cout<<arr[i]<<" ";
     }
+    std::cout<<std::endl;
 }
 
 int main()
 {
-    int arr[10]={5,84,16,17,46,23,19,56,32,14};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    //print_arr( arr , size );
-    //std::swap(arr[0],arr[1]);
-    sort(arr,size);
-    print_arr( arr , size );
-  
-   //std::cout<<size;
-
-    
+     int size_of_array ;
+     std::cout<<"please enter size of numbers in your array"<<std::endl;
+     std::cin >> size_of_array ;
+     std::cout<<"please enter numbers of your array"<<std::endl;
+     std::vector <int> myVector;
+     int numbers ;
+     for(int i = 0 ; i < size_of_array ; i++){
+         std::cout<<"enter value of "<< i << " index " <<std::endl ;
+         std::cin>> numbers;
+         myVector.push_back(numbers);
+         numbers = 0 ;
+     }
+     std::vector<int>::iterator my_iterator = myVector.begin();
+     print_arr( my_iterator , size_of_array);
+     sort( my_iterator,size_of_array);
+     print_arr( my_iterator , size_of_array );
+   
 }
