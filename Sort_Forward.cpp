@@ -10,7 +10,7 @@
 #include<map>
 #include<stack>
 
-void sort(std::forward_list<int> arr ,std::forward_list<int>::iterator it_ferst) //սա դասավորում է զանգվածի ելեմենտները աճման կարգով
+/*void sort(std::forward_list<int> arr ,std::forward_list<int>::iterator it_ferst) //սա դասավորում է զանգվածի ելեմենտները աճման կարգով
 {
     while (it_ferst!= arr.end()){
     auto it_count = it_ferst;
@@ -21,7 +21,7 @@ void sort(std::forward_list<int> arr ,std::forward_list<int>::iterator it_ferst)
         
     } 
 }
-
+*/
 int main ()
 {
   std::forward_list<int > my_flist={ 19,15,8,3,47};

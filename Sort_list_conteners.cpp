@@ -46,7 +46,7 @@ int main ()
   std::cout << std::endl;
  sort(it_first,it_last);
 std::cout << "mylist contains:";
- for (it_first=mylist.begin(); it_first!=mylist.end(); ++it_first)
+ for (auto it_first=mylist.begin(); it_first!=mylist.end(); ++it_first)
     std::cout << ' ' << *it_first;
 std::cout << std::endl;
 
