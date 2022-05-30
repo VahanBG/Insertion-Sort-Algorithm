@@ -1,16 +1,11 @@
 #include<iostream>
 #include<string>
-#include<iterator>
-#include<array>
-#include<vector>
-#include<deque>
 #include<list>
-#include<forward_list>
-#include<set>
-#include<map>
-#include<stack>
+#include<iterator>
 
-void sort(std::list<int>::iterator it_first,std::list<int>::iterator it_last) //սա դասավորում է զանգվածի ելեմենտները աճման կարգով
+
+
+void sort(std::list<int>::iterator it_first,std::list<int>::iterator it_last) // this sorts the elements of the array in ascending order
 {
   
  while( it_first != it_last)

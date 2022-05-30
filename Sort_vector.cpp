@@ -1,14 +1,9 @@
 #include<iostream>
 #include<string>
-#include<array>
 #include<vector>
-#include<deque>
-#include<list>
-#include<forward_list>
-#include<set>
-#include<map>
-#include<stack>
- void sort(std::vector< int > arr ) //սա դասավորում է զանգվածի ելեմենտները աճման կարգով
+#include<iterator>
+
+ void sort(std::vector< int > arr ) // this sorts the elements of the array in ascending order
 {
     std::vector< int >::iterator it_vec = arr.begin();
     for(int i = 1 ; i < arr.size()  ; i++){
@@ -21,7 +16,7 @@
     }
 }
 
-void print_arr(std::vector< int >  arr){ //տպում է զանգվածը
+void print_arr(std::vector< int >  arr){ 
   std::vector< int >::iterator my_iterator = arr.begin();
   for( int i = 0 ; i < arr.size(); i++ ){
         std::cout<<*(my_iterator + i)<<" ";
