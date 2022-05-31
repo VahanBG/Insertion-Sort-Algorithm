@@ -23,7 +23,8 @@ void sort(std::list< T >& mylist)// this sorts the elements of the array in asce
 		it_first++;
 	}
 }
-void Print_list(std::list<int> mylist)
+template < typename T>
+void Print_list(std::list< T > mylist)
 {
     for (auto it_first = mylist.begin(); it_first != mylist.end(); ++it_first)
 	std::cout << ' ' << *it_first;

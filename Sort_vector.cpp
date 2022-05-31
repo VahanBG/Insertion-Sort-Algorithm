@@ -15,7 +15,7 @@ void sort(std::vector< T > &arr)	// this sorts the elements of the array in asce
 		}
 	}
 }
-template< class T >
+template< typename T >
 void print_arr(std::vector< T > arr)
 {
 	typename std::vector< T >::iterator my_iterator = arr.begin();
