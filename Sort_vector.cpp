@@ -2,10 +2,10 @@
 #include <string>
 #include <vector>
 #include <iterator>
-
-void sort(std::vector<int> arr)	// this sorts the elements of the array in ascending order
+template< typename T >
+void sort(std::vector< T > &arr)	// this sorts the elements of the array in ascending order
 {
-	std::vector<int>::iterator it_vec = arr.begin();
+	typename std::vector< T >::iterator it_vec = arr.begin();
 	for (int i = 1; i < arr.size(); i++)
 	{
 		int count = *(it_vec + i);
@@ -15,12 +15,13 @@ void sort(std::vector<int> arr)	// this sorts the elements of the array in ascen
 		}
 	}
 }
-
-void print_arr(std::vector<int> arr)
+template< class T >
+void print_arr(std::vector< T > arr)
 {
-	std::vector<int>::iterator my_iterator = arr.begin();
+	typename std::vector< T >::iterator my_iterator = arr.begin();
 	for (int i = 0; i < arr.size(); i++)
 	{
+
 		std::cout << *(my_iterator + i) << " ";
 	}
 	std::cout << std::endl;

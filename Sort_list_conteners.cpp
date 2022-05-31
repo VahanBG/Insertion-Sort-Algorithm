@@ -2,10 +2,12 @@
 #include <string>
 #include <list>
 #include <iterator>
-
-void sort(std::list<int>::iterator it_first, std::list<int>::iterator it_last)	// this sorts the elements of the array in ascending order
+template < typename T>
+void sort(std::list< T >& mylist)// this sorts the elements of the array in ascending order
 {
-
+    typename std::list< T >::iterator it_first = mylist.begin();
+    typename std::list< T >::iterator it_last = mylist.end();
+	it_last -- ;
 	while (it_first != it_last)
 	{
 		int i = 0;
@@ -21,22 +23,20 @@ void sort(std::list<int>::iterator it_first, std::list<int>::iterator it_last)	/
 		it_first++;
 	}
 }
-
+void Print_list(std::list<int> mylist)
+{
+    for (auto it_first = mylist.begin(); it_first != mylist.end(); ++it_first)
+	std::cout << ' ' << *it_first;
+	std::cout << std::endl;
+}
 int main()
 {
 	std::list<int> mylist = { 19, 15, 8, 3, 47 };
-	std::list<int>::iterator it_first = mylist.begin();
-	auto it_last = mylist.end();
-	it_last--;
 	std::cout << "mylist contains:";
-	for (auto it = mylist.begin(); it != mylist.end(); ++it)
-		std::cout << ' ' << *it;
-	std::cout << std::endl;
-	sort(it_first, it_last);
+	Print_list(mylist);
+	sort(mylist);
 	std::cout << "mylist contains:";
-	for (auto it_first = mylist.begin(); it_first != mylist.end(); ++it_first)
-		std::cout << ' ' << *it_first;
-	std::cout << std::endl;
-
+	Print_list(mylist);
+	
 	return 0;
 }
