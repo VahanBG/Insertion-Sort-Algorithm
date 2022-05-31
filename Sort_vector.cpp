@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <vector>
 #include <iterator>
 template< typename T >
@@ -16,7 +15,7 @@ void sort(std::vector< T > &arr)	// this sorts the elements of the array in asce
 	}
 }
 template< typename T >
-void print_arr(std::vector< T > arr)
+void print_vector(std::vector< T > arr)
 {
 	typename std::vector< T >::iterator my_iterator = arr.begin();
 	for (int i = 0; i < arr.size(); i++)
@@ -45,9 +44,9 @@ int main()
 	}
 
 	std::cout << "your array is : " << std::endl;
-	print_arr(myVector);
+	print_vector(myVector);
 	sort(myVector);
 	std::cout << "your array after sorting" << std::endl;
-	print_arr(myVector);
+	print_vector(myVector);
 
 }
