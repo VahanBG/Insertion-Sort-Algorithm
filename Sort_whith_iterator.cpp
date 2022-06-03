@@ -1,6 +1,4 @@
 #include <iostream>
-#include <list>
-#include <vector>
 #include <iterator>
 
 template < typename T1>
